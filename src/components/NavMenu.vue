@@ -1,7 +1,9 @@
 <template>
   <nav>
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/other">Other</RouterLink>
+    <RouterLink to="/Home">Home</RouterLink>
+    <RouterLink to="/BookFlight">Book Flight</RouterLink>
+    <RouterLink to="/Destinations">Destinations</RouterLink>
+    <RouterLink to="/Login">Login</RouterLink>
   </nav>
 </template>
 
