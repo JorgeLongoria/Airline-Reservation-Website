@@ -10,6 +10,7 @@ const title = ref(import.meta.env.VITE_APP_NAME)
         <span class="brand-title">{{ title }}</span>
       </RouterLink>
       <div class="menu">
+        <RouterLink to="/Home" href="#" class="menu-items">Home</RouterLink>
       <RouterLink to="/BookFlight" href="#" class="menu-items">Book Flight</RouterLink>
       <RouterLink to="/Destinations" href="#" class="menu-items">Destinations</RouterLink>
       <RouterLink to="/Login" href="#" class="menu-login">Login</RouterLink>
