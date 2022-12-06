@@ -5,7 +5,7 @@ import { ref } from 'vue'
 <template>
     <div class="bg-container">
       <img class="background-img" src="https://static.toiimg.com/photo/70739792.cms" >
-      <div class="text_top">Destinations Page</div>
+      <div class="text_top">My Account</div>
     </div>
 </template>
 

@@ -1,5 +1,8 @@
 <script setup>
 import { ref } from 'vue'
+import { useAuth } from '@/composables/useAuth'
+
+const { isAuthenticated, logout, user } = useAuth()
 const title = ref(import.meta.env.VITE_APP_NAME)
 </script>
 
@@ -10,10 +13,22 @@ const title = ref(import.meta.env.VITE_APP_NAME)
         <span class="brand-title">{{ title }}</span>
       </RouterLink>
       <div class="menu">
+        <p v-show="isAuthenticated" class="user text- text-yellow-600">
+          Welcome back
+          <strong>
+            <i>{{ user?.email }}</i>
+          </strong>
+        </p>
         <RouterLink to="/Home" href="#" class="menu-items">Home</RouterLink>
-      <RouterLink to="/BookFlight" href="#" class="menu-items">Book Flight</RouterLink>
-      <RouterLink to="/Destinations" href="#" class="menu-items">Destinations</RouterLink>
-      <RouterLink to="/Login" href="#" class="menu-login">Login</RouterLink>
+        <RouterLink to="/BookFlight" href="#" class="menu-items">Book Flight</RouterLink>
+        <RouterLink to="/Destinations" href="#" class="menu-items">Destinations</RouterLink>
+        <div v-if="isAuthenticated">
+          <RouterLink to="/MyAccount" href="#" class="menu-items">My Account</RouterLink>
+          <button href="#" class="menu-logout" @click="logout">Logout</button>
+        </div>
+        <div v-else>
+        <RouterLink to="/Login" href="#" class="menu-login">Login</RouterLink>
+        </div>
       </div>
     </div>
   </nav>
@@ -21,24 +36,33 @@ const title = ref(import.meta.env.VITE_APP_NAME)
 
 <style lang="postcss" scoped>
   nav {
-    @apply h-20 bg-yellow-900;
+    @apply h-24 bg-yellow-900;
     .wrapper {
       @apply container mx-auto flex w-full items-center justify-between;
       .brand {
         &-title {
-          @apply text-4xl font-semibold text-white;
+          @apply text-6xl font-semibold text-white;
         }
       }
       .menu {
-        @apply flex gap-2;
+        @apply flex gap-4;
 
         &-items {
-          @apply mt-5 text-white hover:text-gray-600;
+          @apply flex font-medium mt-7 ml-3 text-white hover:text-gray-600;
         }
         &-login {
-          @apply mt-5 text-white hover:text-green-300;
+          @apply flex font-medium mt-7 ml-3 mr-20 text-white hover:text-green-300;
+        }
+        &-logout {
+          @apply flex font-medium mt-2 ml-7 text-red-600 hover:text-red-300;
         }
       }
     }
   }
+
+  .user {
+    position: absolute;
+    left: 73.5%;
+  }
+
 </style>
