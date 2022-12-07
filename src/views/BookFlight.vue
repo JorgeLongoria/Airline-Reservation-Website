@@ -90,6 +90,7 @@ import { ref } from 'vue'
     <div>Children (0 - 17): {{ children }}</div>
     <select class="text-black bg-slate-200" v-model="children">
     <option disabled value="">Please select one</option>
+    <option>0</option>
     <option>1</option>
     <option>2</option>
     <option>3</option>
@@ -123,7 +124,7 @@ import { ref } from 'vue'
   }
 
   .search-button {
-    @apply rounded-md px-8 py-4 text-xl ring-1 bg-green-400;
+    @apply rounded-md px-4 py-2 text-xl ring-1 bg-yellow-600;
   }
 </style>
 
