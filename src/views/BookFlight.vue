@@ -10,7 +10,7 @@ import { ref } from 'vue'
         departure: '',
         arrival: '',
         adults: '',
-        children: ''
+        children: '',
       }
     }
   }
