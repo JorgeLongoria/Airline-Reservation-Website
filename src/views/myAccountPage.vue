@@ -14,9 +14,9 @@ const { isAuthenticated, logout, user } = useAuth()
         <p v-show="isAuthenticated" class="text-white">
           Hello
           <strong>
-            <i>{{ user?.email }}</i>
+            <i>{{ user?.email }},</i>
           </strong>
-          from your account dashboard, you can view you recent flights.
+          from your account dashboard, you can view your recent flights.
         </p>
 
         <div class="account-recent">
