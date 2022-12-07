@@ -21,7 +21,7 @@ const title = ref(import.meta.env.VITE_APP_NAME)
         </p>
         <RouterLink to="/Home" href="#" class="menu-items">Home</RouterLink>
         <RouterLink to="/BookFlight" href="#" class="menu-items">Book Flight</RouterLink>
-        <RouterLink to="/Destinations" href="#" class="menu-items">Destinations</RouterLink>
+        <RouterLink to="/Fleet" href="#" class="menu-items">Fleet</RouterLink>
         <div v-if="isAuthenticated">
           <RouterLink to="/MyAccount" href="#" class="menu-items">My Account</RouterLink>
           <button href="#" class="menu-logout" @click="logout">Logout</button>
